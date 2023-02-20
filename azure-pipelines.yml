@@ -5,7 +5,7 @@ trigger:
 variables:
   resourceGroupName: 'example'
   location: 'westeurope'
-  azureSubscription: ''Azure Pass - Sponsorship(e4edcb84-2a0a-40fc-b469-1e37a04cdf24)''
+  azureSubscription: 'Azure Pass - Sponsorship(e4edcb84-2a0a-40fc-b469-1e37a04cdf24)'
   resourcePrefix: 'bicep'
 
 pool:
