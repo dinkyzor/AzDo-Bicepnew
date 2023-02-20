@@ -1,10 +1,17 @@
 @maxLength(5)
-param storageAccountPrefix string
+
 param location string = resourceGroup().location
 param tagValues object
 
-resource sta 'Microsoft.Storage/storageAccounts@2021-01-01' = {
-  name: '${storageAccountPrefix}${uniqueString(resourceGroup().id)}'
+
+param LoopDieLoop array = [
+  'storagevanjansen1000'
+  'storagevanjansen2000'
+  'storagevanjansen3000'
+]
+ 
+resource sta 'Microsoft.Storage/storageAccounts@2021-01-01' = [for name in LoopDieLoop:{
+  name: '${name}'
   location: location
   sku: {
     name: 'Standard_LRS'
@@ -14,6 +21,6 @@ resource sta 'Microsoft.Storage/storageAccounts@2021-01-01' = {
   properties: {
     supportsHttpsTrafficOnly: true
   }
-}
+}]
 
 output staid string = sta.id
