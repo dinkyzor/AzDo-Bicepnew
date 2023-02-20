@@ -23,4 +23,4 @@ resource sta 'Microsoft.Storage/storageAccounts@2021-01-01' = [for name in LoopD
   }
 }]
 
-output staid string = sta.id
+//output staid string = sta.id
