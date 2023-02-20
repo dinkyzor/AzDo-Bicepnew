@@ -1,5 +1,5 @@
 @maxLength(5)
-
+param storageAccountPrefix string
 param location string = resourceGroup().location
 param tagValues object
 
@@ -11,7 +11,7 @@ param LoopDieLoop array = [
 ]
  
 resource sta 'Microsoft.Storage/storageAccounts@2021-01-01' = [for name in LoopDieLoop:{
-  name: '${name}'
+  name: '${name}${storageAccountPrefix}'
   location: location
   sku: {
     name: 'Standard_LRS'
